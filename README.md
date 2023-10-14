@@ -3,5 +3,7 @@ loan management webservice
 
 Endpoint to get Payback plan : 
 
-GET /loan-management/myLoanPlan
-Request Params : loanAmount, payBackDurationInYears, loanType
+**GET** _/loan-management/myLoanPlan_.
+
+
+**Request Params** : _loanAmount, payBackDurationInYears, loanType_
