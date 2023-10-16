@@ -2,6 +2,7 @@ package com.loan.management.controller;
 
 import com.loan.management.config.InterestSlab;
 import com.loan.management.dto.*;
+import com.loan.management.logger.Console;
 import com.loan.management.service.LoanCalculator;
 import com.loan.management.service.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ public class LoanManagementController {
         public PayBackPlan payBackPlan(@RequestParam Float loanAmount,
                                        @RequestParam Integer payBackDurationInYears,
                                        @RequestParam String loanType){
+            Console.logDebug("myLoanPlan hit");
             return loanService.getPayBackPlan(new LoanRequest(loanAmount, payBackDurationInYears,
                     LoanType.valueOf(loanType.toUpperCase()), Currency.EUR, Compound.MONTHLY));
         }
